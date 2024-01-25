@@ -16,18 +16,37 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .button-filter {
+    @apply bg-fujitsu-blue text-fujitsu-white mx-2 font-bold  max-w-12 max-h-12 hover:bg-fujitsu-dark-blue transition;
+  }
+
+  .standard-button {
+    @apply border-fujitsu-blue text-fujitsu-blue border-2 max-w-12 max-h-12 hover:bg-fujitsu-blue/10 transition-all;
+  }
+
+  .input-search {
+    @apply flex items-center border border-fujitsu-light-gray text-fujitsu-gray rounded-md h-12;
+  }
+
+  .p-tree .p-tree-filter-container input {
+    @apply w-full p-2 border border-fujitsu-gray focus:border-none active:border-none
+    /* Add your custom styles here */
+  }
+
+  /* Additional styles for the filter placeholder */
+  .p-tree .p-tree-filter-container::placeholder {
+    color: #fff;
+  }
+
+  .custom-selected-node {
+    background-color: #e6f7ff; /* Change the background color to your desired color */
+    color: #0066cc; /* Change the text color to your desired color */
   }
 }
