@@ -27,6 +27,10 @@
     @apply bg-fujitsu-blue text-fujitsu-white mx-2 font-bold  max-w-12 max-h-12 hover:bg-fujitsu-dark-blue transition;
   }
 
+  .button-toggle {
+    @apply bg-fujitsu-blue text-fujitsu-white mx-2 font-bold max-h-12 hover:bg-fujitsu-dark-blue transition;
+  }
+
   .standard-button {
     @apply border-fujitsu-blue text-fujitsu-blue border-2 max-w-12 max-h-12 hover:bg-fujitsu-blue/10 transition-all;
   }
@@ -37,7 +41,7 @@
 
   .p-tree .p-tree-filter-container input {
     @apply w-full p-2 border border-fujitsu-gray focus:border-none active:border-none
-    /* Add your custom styles here */
+    /* Add your custom styles here */;
   }
 
   /* Additional styles for the filter placeholder */
