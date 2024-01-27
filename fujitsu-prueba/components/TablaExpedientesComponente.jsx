@@ -322,9 +322,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             />
             <h2
               aria-label={`Título de la página: ${titulo}`}
-              className="flex items-center border-fujitsu-light-gray rounded-md p-2 font-bold text-lg"
+              className="flex items-center border-fujitsu-light-gray rounded-md p-2 font-bold text-xl"
             >
-              <span className="pi pi-folder mx-2 text-fujitsu-dark-blue "></span>{" "}
+              <span className="pi pi-folder mx-2 text-fujitsu-dark-blue  text-xl"></span>{" "}
               {titulo}
             </h2>
           </div>

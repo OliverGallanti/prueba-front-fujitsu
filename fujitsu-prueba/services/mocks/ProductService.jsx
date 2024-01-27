@@ -72,6 +72,70 @@ export const ProductService = {
           },
         ],
       },
+      {
+        id: "1002",
+        code: "f2g3k4j5",
+        nombre: "Documento Importante",
+        etiqueta: [15, 28],
+        estado: [
+          "En Revisión",
+          {
+            validaciones: "5 validaciones pendientes",
+            asignadas: "2 asignadas a mí",
+          },
+        ],
+        fecha: "10/03/2024 - 09:45",
+        favorito: true,
+        documentData: [
+          {
+            id: "1002-0",
+            NombreDocumentoCompleto:
+              "Departamento de origen del documento importante con información relevante.",
+            evaluacion: "Aprobado",
+            date: "2020-11-22",
+            plantilla: "Plantilla de Documento Importante",
+            restricciones: 2,
+            etiquetas: [
+              "Importante",
+              "Confidencial",
+              "Fecha Límite",
+              "Documento Externo",
+            ],
+          },
+        ],
+      },
+      {
+        id: "1003",
+        code: "h3i4j5k6",
+        nombre: "Reporte Trimestral",
+        etiqueta: [42, 77],
+        estado: [
+          "Completo",
+          {
+            validaciones: "Todas las validaciones completadas",
+            asignadas: "Ninguna asignada",
+          },
+        ],
+        fecha: "05/04/2024 - 16:30",
+        favorito: false,
+        documentData: [
+          {
+            id: "1003-0",
+            NombreDocumentoCompleto:
+              "Reporte trimestral con información financiera y estadísticas clave.",
+            evaluacion: "Excelente",
+            date: "2020-12-15",
+            plantilla: "Plantilla de Reporte Trimestral",
+            restricciones: 0,
+            etiquetas: [
+              "Informe",
+              "Finanzas",
+              "Estadísticas",
+              "Trimestre Actual",
+            ],
+          },
+        ],
+      },
     ];
   },
 
