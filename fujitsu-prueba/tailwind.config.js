@@ -16,6 +16,8 @@ module.exports = {
       "fujitsu-light-gray": "#E5E7EB",
       "fujitsu-black": "#1C1C1C",
       "fujitsu-dark-blue": "#204887",
+      "fujitsu-yellow": "#EAB308",
+      "fujitsu-red": "#e24040"
     },
   },
   plugins: [],

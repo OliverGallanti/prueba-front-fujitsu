@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import MenuCarpetas from "./MenuCarpetas";
-import TablaExpedientes from "./TablaExpedientes";
+import TablaExpedienteComponente from "./TablaExpedientesComponente";
 
 const ContenedorPrincipal = () => {
   const [titulo, setTitulo] = useState("Expedientes Material");
@@ -19,14 +19,12 @@ const ContenedorPrincipal = () => {
       <div className="flex justify-between p-12 ">
         {/* contenedor de la izquierda // Menú de carpetas*/}
         <div className="w-[20%] p-2">
-          <MenuCarpetas
-            changeTitulo={changeTitulo}
-          />
+          <MenuCarpetas changeTitulo={changeTitulo} />
         </div>
 
         {/* contenedor de la derecha // Tabla acordeón con barras de búsqueda */}
         <div className="w-[80%] flex flex-col p-2">
-          <TablaExpedientes titulo={titulo} goBack={goBack} />
+          <TablaExpedienteComponente titulo={titulo} goBack={goBack} />
         </div>
       </div>
     </>
