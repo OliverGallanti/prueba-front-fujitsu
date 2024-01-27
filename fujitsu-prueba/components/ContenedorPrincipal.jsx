@@ -18,12 +18,12 @@ const ContenedorPrincipal = () => {
     <>
       <div className="flex justify-between p-12 ">
         {/* contenedor de la izquierda // Menú de carpetas*/}
-        <div className="w-[20%] p-2">
+        <div className="w-[20%] p-2" aria-description="menu lateral de carpetas">
           <MenuCarpetas changeTitulo={changeTitulo} />
         </div>
 
         {/* contenedor de la derecha // Tabla acordeón con barras de búsqueda */}
-        <div className="w-[80%] flex flex-col p-2">
+        <div className="w-[80%] flex flex-col p-2" aria-description="Tabla de expedientes">
           <TablaExpedienteComponente titulo={titulo} goBack={goBack} />
         </div>
       </div>

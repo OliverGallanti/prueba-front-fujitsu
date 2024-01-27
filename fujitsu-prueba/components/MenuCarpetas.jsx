@@ -1,8 +1,5 @@
 "use client";
-import { Button } from "primereact/button";
-import { InputText } from "primereact/inputtext";
 import React, { useEffect, useState } from "react";
-import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tree } from "primereact/tree";
 import { NodeService } from "@/services/mocks/menuLateral";
 
@@ -46,30 +43,30 @@ const MenuCarpetas = ({ changeTitulo }) => {
 
   return (
     <>
-      <div className="flex flex-col border border-fujitsu-light-gray rounded-md p-4 transition-all">
-        <div className="">
-          <Tree
-            value={nodes}
-            selectionMode="single"
-            filter
-            filterMode="strict"
-            filterPlaceholder="Filtrar Carpetas"
-            selection={selectedKeys}
-            onSelectionChange={selectFolder}
-            selectionKeys={selectedKeys}
-            pt={{
-              root: { className: "w-full md:w-30rem focus:ring-0" },
-              content: ({ context }) => ({
-                className: context.expanded
-                  ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-                  : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all",
-                className: context.selected
-                  ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-                  : "text-fujitsu-black transition-all",
-              }),
-            }}
-          />
-        </div>
+      <div
+        className="flex flex-col border border-fujitsu-light-gray rounded-md p-4 transition-all"
+      >
+        <Tree
+          value={nodes}
+          selectionMode="single"
+          filter
+          filterMode="strict"
+          filterPlaceholder="Filtrar Carpetas"
+          selection={selectedKeys}
+          onSelectionChange={selectFolder}
+          selectionKeys={selectedKeys}
+          pt={{
+            root: { className: "w-full md:w-30rem focus:ring-0" },
+            content: ({ context }) => ({
+              className: context.expanded
+                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+                : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all",
+              className: context.selected
+                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+                : "text-fujitsu-black transition-all",
+            }),
+          }}
+        />
       </div>
     </>
   );
