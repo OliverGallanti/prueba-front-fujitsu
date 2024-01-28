@@ -409,7 +409,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         dataKey="id"
         header={header}
         tableStyle={{ minWidth: "60rem" }}
-        aria-LabelledBy="tabla-expedientes-heading"
+        aria-labelledby="tabla-expedientes-heading"
       >
         <Column
           selectionMode="multiple"
