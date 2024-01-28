@@ -66,6 +66,14 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
     setExpandedRows(null);
   };
 
+  const nombreBodyTemplate = (rowData) => {
+    return (
+      <div>
+        <i className="pi pi-file-pdf" /> {rowData.nombre}
+      </div>
+    );
+  };
+
   const etiquetaBodyTemplate = (rowData) => {
     return (
       <div className="flex justify-start w-full font-bold text-fujitsu-blue text-sm ">
@@ -79,16 +87,12 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
     );
   };
 
-  const iconDocument = () => {
-    return <i className="pi pi-file-pdf" />;
-  };
-
   const estadoBodyTemplate = (rowData) => {
     return (
-      <div className="flex flex-col text-sm">
+      <div className="flex flex-col text-sm font-semibold">
         <div
           className={`${
-            rowData.estado[0] === "Procesado" ? "text-fujitsu-green" : ""
+            rowData.estado[0] === "Procesado" && "text-fujitsu-green"
           }`}
         >
           {rowData.estado[0]}
@@ -184,11 +188,11 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           role="button"
           aria-label="Botón para desplegar menú de acciones"
           icon="pi pi-ellipsis-v"
-          className="hover:bg-fujitsu-light-gray rounded-full h-8 w-8"
+          className="hover:bg-fujitsu-light-gray rounded-full h-8 w-8 p-button p-component p-button-rounded focus:ring-fujitsu-yellow"
           onClick={(event) => menuRight.current.toggle(event)}
           aria-controls="popup_menu_right"
-          aria-haspopup
-        ></Button>
+          aria-haspopup="menu"
+        />
       </>
     );
   };
@@ -312,7 +316,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         </div>
         <div className="flex justify-between w-full">
           {/* Volver a página anterior */}
-          <div className="flex w-1/2">
+          <div className="flex- w-1/2">
             <Button
               role="button"
               aria-label="Botón para volver a la página anterior"
@@ -414,23 +418,19 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             checkbox: {
               className: "border-2 border-fujitsu-gray/50",
               ariaLabel: "Seleccionar fila",
-              ariaSort: "none",
+              role: "checkbox",
             },
-            headerCheckbox: {
-              className: "border-2 border-fujitsu-gray/50 bg-fujitsu-red",
-              ariaLabel: "Seleccionar todas las filas",
-              ariaSort: "none",
-            },
+            headerCheckbox: null,
           }}
         />
         <Column expander={true} className="w-6" />
-        <Column className="w-6" body={iconDocument} />
         <Column
           field="nombre"
           header="Nombre"
           sortable
           className="text-sm"
           aria-sort="Ascendiente"
+          body={nombreBodyTemplate}
         />
         <Column field="extension" />
         <Column

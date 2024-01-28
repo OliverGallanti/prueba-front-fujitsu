@@ -78,7 +78,7 @@ export const ProductService = {
         nombre: "Documento Importante",
         etiqueta: [15, 28],
         estado: [
-          "En Revisión",
+          "Procesado",
           {
             validaciones: "5 validaciones pendientes",
             asignadas: "2 asignadas a mí",
@@ -110,7 +110,7 @@ export const ProductService = {
         nombre: "Reporte Trimestral",
         etiqueta: [42, 77],
         estado: [
-          "Completo",
+          "Procesado",
           {
             validaciones: "Todas las validaciones completadas",
             asignadas: "Ninguna asignada",
@@ -133,6 +133,60 @@ export const ProductService = {
               "Estadísticas",
               "Trimestre Actual",
             ],
+          },
+        ],
+      },
+      {
+        id: "1004",
+        code: "a1b2c3d4",
+        nombre: "Contrato de Servicios",
+        etiqueta: [88, 12],
+        estado: [
+          "Pendiente",
+          {
+            validaciones: "1 validación pendiente",
+            asignadas: "Asignada a otro usuario",
+          },
+        ],
+        fecha: "18/05/2024 - 10:15",
+        favorito: false,
+        documentData: [
+          {
+            id: "1004-0",
+            NombreDocumentoCompleto:
+              "Contrato de servicios para la próxima campaña publicitaria.",
+            evaluacion: "Pendiente",
+            date: "2021-02-28",
+            plantilla: "Plantilla de Contrato de Servicios",
+            restricciones: 1,
+            etiquetas: ["Contrato", "Servicios", "Publicidad"],
+          },
+        ],
+      },
+      {
+        id: "1005",
+        code: "x9y8z7w6",
+        nombre: "Informe de Investigación",
+        etiqueta: [5, 45],
+        estado: [
+          "En Progreso",
+          {
+            validaciones: "2 validaciones en curso",
+            asignadas: "1 asignada a otro usuario",
+          },
+        ],
+        fecha: "02/06/2024 - 14:30",
+        favorito: true,
+        documentData: [
+          {
+            id: "1005-0",
+            NombreDocumentoCompleto:
+              "Informe detallado de la investigación de mercado actual.",
+            evaluacion: "Procesado",
+            date: "2021-04-10",
+            plantilla: "Plantilla de Informe de Investigación",
+            restricciones: 0,
+            etiquetas: ["Investigación", "Informe", "Mercado"],
           },
         ],
       },

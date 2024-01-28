@@ -42,33 +42,29 @@ const MenuCarpetas = ({ changeTitulo }) => {
   };
 
   return (
-    <>
-      <div
-        className="flex flex-col border border-fujitsu-light-gray rounded-md p-4 transition-all"
-      >
-        <Tree
-          value={nodes}
-          selectionMode="single"
-          filter
-          filterMode="strict"
-          filterPlaceholder="Filtrar Carpetas"
-          selection={selectedKeys}
-          onSelectionChange={selectFolder}
-          selectionKeys={selectedKeys}
-          pt={{
-            root: { className: "w-full md:w-30rem focus:ring-0" },
-            content: ({ context }) => ({
-              className: context.expanded
-                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-                : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all",
-              className: context.selected
-                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-                : "text-fujitsu-black transition-all",
-            }),
-          }}
-        />
-      </div>
-    </>
+    <div className="flex flex-col border border-fujitsu-light-gray rounded-md p-4 transition-all">
+      <Tree
+        value={nodes}
+        selectionMode="single"
+        filter
+        filterMode="strict"
+        filterPlaceholder="Filtrar Carpetas"
+        selection={selectedKeys}
+        onSelectionChange={selectFolder}
+        selectionKeys={selectedKeys}
+        pt={{
+          root: { className: "w-full md:w-30rem focus:ring-0" },
+          content: ({ context }) => ({
+            className: context.expanded
+              ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+              : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all",
+            className: context.selected
+              ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+              : "text-fujitsu-black transition-all",
+          }),
+        }}
+      />
+    </div>
   );
 };
 
