@@ -18,9 +18,8 @@ const StarToggleButton = ({ rowData, onStarToggle, favorito }) => {
           ? "text-fujitsu-yellow bg-fujitsu-yellow/5 rounded-full"
           : ""
       } focus:ring-fujitsu-yellow focus:ring-1 `}
-      aria-label={isStarFilled ? "Remove from favorites" : "Add to favorites"}
-      role="checkbox"
-      aria-checked={isStarFilled}
+      aria-label={isStarFilled ? "boton añadir favoritos" : "boton quitar favoritos"}
+      role="button"
     />
   );
 };

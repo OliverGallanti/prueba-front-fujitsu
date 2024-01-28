@@ -53,4 +53,8 @@
     background-color: #e6f7ff; /* Change the background color to your desired color */
     color: #0066cc; /* Change the text color to your desired color */
   }
+
+  th.p-selection-column > div.p-column-header-content > div.p-checkbox {
+    display: none;
+  }
 }

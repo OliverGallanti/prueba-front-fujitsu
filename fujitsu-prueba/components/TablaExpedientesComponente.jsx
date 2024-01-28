@@ -9,6 +9,7 @@ import StarToggleButton from "./ui/StarToggleButton";
 import { Tooltip } from "primereact/tooltip";
 import { Menu } from "primereact/menu";
 import { FilterMatchMode } from "primereact/api";
+import { Paginator } from "primereact/paginator";
 
 export default function TablaExpedienteComponente({ titulo, goBack }) {
   const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
   const onRowExpand = (event) => {
     toast.current.show({
       severity: "info",
-      summary: "Product Expanded",
+      summary: "Fila Expandida",
       detail: event.data.name,
       life: 3000,
     });
@@ -39,7 +40,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
   const onRowCollapse = (event) => {
     toast.current.show({
       severity: "success",
-      summary: "Product Collapsed",
+      summary: "Fila Colapsada",
       detail: event.data.name,
       life: 3000,
     });
@@ -176,7 +177,8 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
     return (
       <>
         <Menu
-          aria-label="Menú de acciones"
+          role="menu"
+          aria-label="menu"
           className="w-[24rem]"
           model={items}
           popup
@@ -185,13 +187,14 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           popupAlignment="right"
         />
         <Button
+          id={rowData.id.toString()}
           role="button"
-          aria-label="Botón para desplegar menú de acciones"
+          aria-label="opciones"
           icon="pi pi-ellipsis-v"
           className="hover:bg-fujitsu-light-gray rounded-full h-8 w-8 p-button p-component p-button-rounded focus:ring-fujitsu-yellow"
           onClick={(event) => menuRight.current.toggle(event)}
           aria-controls="popup_menu_right"
-          aria-haspopup="menu"
+          aria-haspopup="true"
         />
       </>
     );
@@ -216,7 +219,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             </div>
           </div>
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray font-medium">Evaluación de la fuente</h5>
+            <h5 className="text-fujitsu-gray font-medium">
+              Evaluación de la fuente
+            </h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].evaluacion}
             </div>
@@ -225,7 +230,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
         <div className="w-[30%] flex flex-col">
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray font-medium">Plantillas utilizadas</h5>
+            <h5 className="text-fujitsu-gray font-medium">
+              Plantillas utilizadas
+            </h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].plantilla}
             </div>
@@ -240,7 +247,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
         <div className="w-[30%] flex flex-col">
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray font-medium">Plantillas utilizadas</h5>
+            <h5 className="text-fujitsu-gray font-medium">
+              Plantillas utilizadas
+            </h5>
             <div className="flex text-fujitsu-red">
               {data.documentData[0].restricciones} restricciones
             </div>
@@ -273,7 +282,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
                   </div>
                 </div>
               ) : (
-                <div>{data.documentData[0].etiquetas}</div>
+                <div>{data.documentData[0].etiquetas.join(", ")}</div>
               )}
             </div>
           </div>
@@ -304,7 +313,8 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
               onChange={onGlobalFilterChange}
               placeholder="Buscar por Nombre"
               className="h-12 pl-10 font-normal"
-              aria-label="Campo para buscar en tabla"
+              aria-label="buscar"
+              aria-labelledby="nombre"
             />
           </div>
           <Button
@@ -324,10 +334,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
               className="standard-button w-14 h-14"
               onClick={goBack}
             />
-            <h2
-              aria-label={`Título de la página: ${titulo}`}
-              className="flex items-center border-fujitsu-light-gray rounded-md p-2 font-bold text-xl"
-            >
+            <h2 className="flex items-center border-fujitsu-light-gray rounded-md p-2 font-bold text-xl">
               <span className="pi pi-folder mx-2 text-fujitsu-dark-blue  text-xl"></span>{" "}
               {titulo}
             </h2>
@@ -380,15 +387,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
   return (
     <div className="card">
-      <Toast
-        ref={toast}
-        aria-live="polite"
-        aria-atomic="true"
-        role="status"
-        aria-label="Notificaciones de mensajes"
-      />
+      <Toast ref={toast} />
       <DataTable
-        aria-label="Tabla de expedientes"
+        aria-label="table"
         selectionMode="checkbox"
         selection={selectedProducts}
         onSelectionChange={selectRows}
@@ -396,10 +397,10 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         rows={5}
         rowsPerPageOptions={[5, 10, 25, 50]}
         scrollable
-        scrollHeight="55vh"
+        scrollHeight="62vh"
         globalFilterFields={["nombre"]}
         filters={filters}
-        emptyMessage="404"
+        emptyMessage="No se han encontrado resultados"
         value={products}
         expandedRows={expandedRows}
         onRowToggle={(e) => setExpandedRows(e.data)}
@@ -409,7 +410,10 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         dataKey="id"
         header={header}
         tableStyle={{ minWidth: "60rem" }}
-        aria-labelledby="tabla-expedientes-heading"
+        pt={{
+          row: { className: "border-2 border-fujitsu-gray/50" },
+          footer: { className: "border-2 border-fujitsu-gray/50" },
+        }}
       >
         <Column
           selectionMode="multiple"
@@ -418,7 +422,14 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             checkbox: {
               className: "border-2 border-fujitsu-gray/50",
             },
-            headerCheckbox: null,
+            headerCheckbox: {
+              className: "border-2 border-fujitsu-gray/50 bg-fujitsu-red",
+              ariaLabel: "Seleccionar todas las filas", // Add a meaningful aria-label
+              role: "checkbox",
+              ariaChecked:
+                selectedProducts?.length === products.length ? "true" : "false", // Add aria-checked based on all rows selected
+              tabindex: "0",
+            },
           }}
         />
         <Column expander={true} className="w-6" />
@@ -427,7 +438,6 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           header="Nombre"
           sortable
           className="text-sm"
-          aria-sort="Ascendiente"
           body={nombreBodyTemplate}
         />
         <Column field="extension" />
@@ -435,31 +445,17 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           field="etiqueta"
           header="Etiqueta"
           sortable
-          aria-sort="Ascendiente"
           body={etiquetaBodyTemplate}
         />
         <Column
           field="estado"
           header="Estado"
           sortable
-          aria-sort="Ascendiente"
           body={estadoBodyTemplate}
         />
 
-        <Column
-          field="fecha"
-          header="Fecha"
-          className="text-sm"
-          sortable
-          aria-sort="Ascendiente"
-        />
-        <Column
-          field="id"
-          header="ID"
-          className="text-sm"
-          sortable
-          aria-sort="Ascendiente"
-        />
+        <Column field="fecha" header="Fecha" className="text-sm" sortable />
+        <Column field="id" header="ID" className="text-sm" sortable />
         <Column
           field="acciones"
           className="text-sm"

@@ -35,7 +35,7 @@ const MenuCarpetas = ({ changeTitulo }) => {
 
     if (selectedNode) {
       console.log("Selected Node:", selectedNode);
-      setSelectedNodeData(selectedNode.data);
+      // setSelectedNodeData(selectedNode.data);
       changeTitulo(selectedNode);
     }
   };
@@ -43,6 +43,8 @@ const MenuCarpetas = ({ changeTitulo }) => {
   return (
     <div className="flex flex-col border-2 border-fujitsu-light-gray rounded-md p-4 transition-all">
       <Tree
+        role="tree"
+        aria-label="Arbol de carpetas"
         value={nodes}
         selectionMode="single"
         filter
@@ -54,12 +56,15 @@ const MenuCarpetas = ({ changeTitulo }) => {
         pt={{
           root: { className: "w-full md:w-30rem focus:ring-0" },
           content: ({ context }) => ({
-            className: context.expanded
-              ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-              : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all",
-            className: context.selected
-              ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
-              : "text-fujitsu-black transition-all",
+            className: `${
+              context.expanded
+                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+                : "hover:bg-fujitsu-light-gray active:text-fujitsu-black focus:text-fujitsu-black transition-all"
+            } ${
+              context.selected
+                ? "bg-fujitsu-blue/10 text-fujitsu-blue transition-all"
+                : "text-fujitsu-black transition-all"
+            }`,
           }),
         }}
       />
