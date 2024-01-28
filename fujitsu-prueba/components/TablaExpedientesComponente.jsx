@@ -199,7 +199,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
   const rowExpansionTemplate = (data) => {
     return (
-      <div className="flex justify-between w-full text-sm">
+      <div className="flex justify-between w-full text-sm bg-fujitsu-light-gray/20 pt-4 border-t-2 border-t-fujitsu-gray/10">
         <div className="w-[10%]">
           <div className="flex justify-center border-2 border-fujitsu-red rounded-md w-12 h-24 m-4">
             <div className="flex items-center ">
@@ -210,13 +210,13 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
         <div className="w-[30%] flex flex-col">
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">{data.nombre}.pdf</h5>
+            <h5 className="text-fujitsu-gray font-medium">{data.nombre}.pdf</h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].NombreDocumentoCompleto}
             </div>
           </div>
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">Evaluación de la fuente</h5>
+            <h5 className="text-fujitsu-gray font-medium">Evaluación de la fuente</h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].evaluacion}
             </div>
@@ -225,13 +225,13 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
         <div className="w-[30%] flex flex-col">
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">Plantillas utilizadas</h5>
+            <h5 className="text-fujitsu-gray font-medium">Plantillas utilizadas</h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].plantilla}
             </div>
           </div>
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">Fecha de creación</h5>
+            <h5 className="text-fujitsu-gray font-medium">Fecha de creación</h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].date}
             </div>
@@ -240,13 +240,13 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
         <div className="w-[30%] flex flex-col">
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">Plantillas utilizadas</h5>
+            <h5 className="text-fujitsu-gray font-medium">Plantillas utilizadas</h5>
             <div className="flex text-fujitsu-red">
               {data.documentData[0].restricciones} restricciones
             </div>
           </div>
           <div className="flex flex-col">
-            <h5 className="text-fujitsu-gray">Etiquetas</h5>
+            <h5 className="text-fujitsu-gray font-medium">Etiquetas</h5>
             <div className="flex text-fujitsu-black">
               {data.documentData[0].etiquetas.length > 5 ? (
                 <div className="">
@@ -296,7 +296,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
     return (
       <div className="flex flex-col">
         <div className="flex justify-end w-full">
-          <div className="p-input-icon-left">
+          <div className="p-input-icon-left border-2 border-fujitsu-gray/50 rounded-lg">
             <i className="pi pi-search"></i>
             <InputText
               type="search"
@@ -316,12 +316,12 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         </div>
         <div className="flex justify-between w-full">
           {/* Volver a página anterior */}
-          <div className="flex- w-1/2">
+          <div className="flex items-center w-1/2">
             <Button
               role="button"
               aria-label="Botón para volver a la página anterior"
               icon="pi pi-arrow-left"
-              className="standard-button"
+              className="standard-button w-14 h-14"
               onClick={goBack}
             />
             <h2
@@ -333,7 +333,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-end my-4 text-fujitsu-blue text-sm">
+          <div className="flex flex-wrap justify-end my-4 text-fujitsu-blue text-sm gap-2">
             {selectedProducts?.length > 0 ? (
               <Button
                 role="button"
@@ -348,19 +348,19 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
               role="button"
               aria-label="Expandir todo"
               icon="pi pi-plus"
-              label="Expand All"
+              label="Expandir todo"
               onClick={expandAll}
               text
-              className="hover:bg-fujitsu-blue/10 transition-all rounded-md p-3"
+              className="hover:bg-fujitsu-blue/10 transition-all rounded-md p-3 border-2 border-fujitsu-blue"
             />
             <Button
               role="button"
               aria-label="Contraer todo"
               icon="pi pi-minus"
-              label="Collapse All"
+              label="Contraer todo"
               onClick={collapseAll}
               text
-              className="hover:bg-fujitsu-blue/10 transition-all rounded-md p-3"
+              className="hover:bg-fujitsu-blue/10 transition-all rounded-md p-3 border-2 border-fujitsu-blue"
             />
           </div>
         </div>
@@ -388,7 +388,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         aria-label="Notificaciones de mensajes"
       />
       <DataTable
-        ariaLabel="Tabla de expedientes"
+        aria-label="Tabla de expedientes"
         selectionMode="checkbox"
         selection={selectedProducts}
         onSelectionChange={selectRows}
@@ -409,7 +409,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         dataKey="id"
         header={header}
         tableStyle={{ minWidth: "60rem" }}
-        ariaLabelledBy="tabla-expedientes-heading"
+        aria-LabelledBy="tabla-expedientes-heading"
       >
         <Column
           selectionMode="multiple"
@@ -417,8 +417,6 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           pt={{
             checkbox: {
               className: "border-2 border-fujitsu-gray/50",
-              ariaLabel: "Seleccionar fila",
-              role: "checkbox",
             },
             headerCheckbox: null,
           }}

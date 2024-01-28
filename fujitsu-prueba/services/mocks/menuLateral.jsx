@@ -24,7 +24,7 @@ export const NodeService = {
       {
         key: "1",
         label: "Contenido de Islas Baleares",
-        data: "Events Folder",
+        data: "Contenido de Islas Baleares",
         icon: "pi pi-fw pi-folder-open",
         children: [
           {
