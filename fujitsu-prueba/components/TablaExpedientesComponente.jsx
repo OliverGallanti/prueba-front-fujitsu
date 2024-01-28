@@ -47,13 +47,22 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
   };
 
   const onDelete = () => {
+    const newList = products.filter((element) =>
+      !selectedProducts.includes(element)
+    );
+
     toast.current.show({
       severity: "success",
       summary: "Elemento eliminado",
       life: 3000,
     });
+    setProducts(newList);
     setSelectedProducts();
   };
+
+  useEffect(() => {
+    console.log("filas actuales", products);
+  }, [products]);
 
   const expandAll = () => {
     let _expandedRows = {};
