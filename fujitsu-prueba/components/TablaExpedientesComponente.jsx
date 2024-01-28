@@ -199,7 +199,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
   const rowExpansionTemplate = (data) => {
     return (
-      <div className="flex justify-between w-full text-sm bg-fujitsu-light-gray/20 pt-4 border-t-2 border-t-fujitsu-gray/10">
+      <div className="flex justify-between w-full text-sm bg-fujitsu-light-gray/20 pt-4 border-y-2 border-y-fujitsu-gray/10">
         <div className="w-[10%]">
           <div className="flex justify-center border-2 border-fujitsu-red rounded-md w-12 h-24 m-4">
             <div className="flex items-center ">

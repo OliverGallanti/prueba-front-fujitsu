@@ -7,7 +7,6 @@ const MenuCarpetas = ({ changeTitulo }) => {
   //estados y useEffects
   const [nodes, setNodes] = useState([]);
   const [selectedKeys, setSelectedKeys] = useState(null);
-  const [selectedNodeData, setSelectedNodeData] = useState(null);
 
   useEffect(() => {
     NodeService.getTreeNodes().then((data) => setNodes(data));
@@ -42,7 +41,7 @@ const MenuCarpetas = ({ changeTitulo }) => {
   };
 
   return (
-    <div className="flex flex-col border border-fujitsu-light-gray rounded-md p-4 transition-all">
+    <div className="flex flex-col border-2 border-fujitsu-light-gray rounded-md p-4 transition-all">
       <Tree
         value={nodes}
         selectionMode="single"
