@@ -8,13 +8,11 @@ Funcionalidades adaptadas:
 * Botón para colapsar y expandir todas las filas
 * Botón de favoritos
 * Etiquetas/Tooltip que muestra datos necesarios
-* Botón de eliminar implementado con el check (como he hecho un mockup, en vez de setear los valores de la tabla previamente, actualizarlos en un useEffect y poder interactuar y eliminarlos. Decidí solo imprimir el mensaje de elementos eliminados)
+* Botón de eliminar implementado con el check
 * Barra de búsqueda con filtros y cabecera de la tabla con propiedad sticky
 * Submenú por cada elemento de la fila, me hubiera gustado.
 * Esquema de colores especial para el proyecto (se puede ver en Tailwind.config.js) con nivel AAA y AA. 
 * Se realizaron pruebas de accesibilidad visual con motion blur, grayscale, la extensión "Let's get colorblind", Chrome Vox (para los lectores de pantalla) y Google Lighthouse.
 
-Puntos a mejorar
-Se pudo modularizar más el componente de la tabla para una potencial reutilización de componentes
-## TODO ##
-Modularizar más 
+Puntos a mejorar:
+* Se pudo modularizar más el componente de la DataTable para una potencial reutilización de componentes
