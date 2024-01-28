@@ -426,7 +426,7 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
       >
         <Column
           selectionMode="multiple"
-          className="w-6"
+          className="w-[4%]"
           pt={{
             checkbox: {
               className: "border-2 border-fujitsu-gray/50",
@@ -441,33 +441,35 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
             },
           }}
         />
-        <Column expander={true} className="w-6" />
+        <Column expander={true} className="w-[4%]" />
         <Column
           field="nombre"
           header="Nombre"
           sortable
-          className="text-sm"
+          className="text-sm w-[20%]"
           body={nombreBodyTemplate}
         />
-        <Column field="extension" />
+        <Column field="extension" className="text-xs w-[22%]"/>
         <Column
           field="etiqueta"
           header="Etiqueta"
           sortable
           body={etiquetaBodyTemplate}
+          className="text-sm w-[10%]"
         />
         <Column
           field="estado"
           header="Estado"
           sortable
           body={estadoBodyTemplate}
+          className="text-sm w-[25%]"
         />
 
-        <Column field="fecha" header="Fecha" className="text-sm" sortable />
-        <Column field="id" header="ID" className="text-sm" sortable />
+        <Column field="fecha" header="Fecha" sortable className="text-sm w-[5%]"/>
+        <Column field="id" header="ID" className="text-sm w-[5%]" sortable />
         <Column
           field="acciones"
-          className="text-sm"
+          className="text-sm w-[5%]"
           body={accionesBodyTemplate}
         />
         <Column field="favorito" body={ratingBodyTemplate} />

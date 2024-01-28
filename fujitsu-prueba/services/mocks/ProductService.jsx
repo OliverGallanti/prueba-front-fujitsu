@@ -13,6 +13,7 @@ export const ProductService = {
             asignadas: "1 asignada a mí",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "22/01/2024 - 14:59",
         favorito: false,
         documentData: [
@@ -48,6 +49,7 @@ export const ProductService = {
             asignadas: "2 asignadas a mí",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "23/02/2024 - 14:59",
         favorito: true,
         documentData: [
@@ -84,6 +86,7 @@ export const ProductService = {
             asignadas: "2 asignadas a mí",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "10/03/2024 - 09:45",
         favorito: true,
         documentData: [
@@ -116,6 +119,7 @@ export const ProductService = {
             asignadas: "Ninguna asignada",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "05/04/2024 - 16:30",
         favorito: false,
         documentData: [
@@ -148,6 +152,7 @@ export const ProductService = {
             asignadas: "Asignada a otro usuario",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "18/05/2024 - 10:15",
         favorito: false,
         documentData: [
@@ -175,6 +180,7 @@ export const ProductService = {
             asignadas: "1 asignada a otro usuario",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "02/06/2024 - 14:30",
         favorito: true,
         documentData: [
@@ -202,6 +208,7 @@ export const ProductService = {
             asignadas: "Ninguna asignación pendiente",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "12/08/2024 - 09:45",
         favorito: false,
         documentData: [
@@ -229,6 +236,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "30/09/2024 - 16:20",
         favorito: true,
         documentData: [
@@ -256,6 +264,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "15/11/2024 - 12:00",
         favorito: false,
         documentData: [
@@ -283,6 +292,7 @@ export const ProductService = {
             asignadas: "Ninguna asignación pendiente",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "05/02/2024 - 08:30",
         favorito: true,
         documentData: [
@@ -310,6 +320,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "20/12/2024 - 14:45",
         favorito: false,
         documentData: [
@@ -337,6 +348,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "10/04/2024 - 11:10",
         favorito: true,
         documentData: [
@@ -364,6 +376,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "15/08/2024 - 09:20",
         favorito: false,
         documentData: [
@@ -397,6 +410,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "25/03/2024 - 13:50",
         favorito: true,
         documentData: [
@@ -431,6 +445,7 @@ export const ProductService = {
             asignadas: "Sin asignaciones pendientes",
           },
         ],
+        extension: "Expedientes>Contenido Islas Baleares>Expedientes Material",
         fecha: "08/11/2024 - 15:30",
         favorito: false,
         documentData: [
