@@ -86,9 +86,9 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
 
   const etiquetaBodyTemplate = (rowData) => {
     return (
-      <div className="flex justify-start w-full font-bold text-fujitsu-blue text-sm ">
+      <div className="flex justify-start w-full font-bold text-fujitsu-blue">
         <div className="bg-fujitsu-light-gray/30 p-2 mx-2 rounded-full">
-          <i className="pi pi-box" />+{rowData.etiqueta[0]}
+          <i className="pi pi-box text-[1rem]" />+{rowData.etiqueta[0]}
         </div>
         <div className="bg-fujitsu-light-gray/30 p-2 rounded-full">
           <i className="pi pi-box" a />+{rowData.etiqueta[1]}
@@ -449,13 +449,13 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
           className="text-sm w-[20%]"
           body={nombreBodyTemplate}
         />
-        <Column field="extension" className="text-xs w-[22%]"/>
+        <Column field="extension" className="text-xs w-[15%]"/>
         <Column
           field="etiqueta"
           header="Etiqueta"
           sortable
           body={etiquetaBodyTemplate}
-          className="text-sm w-[10%]"
+          className="text-sm w-[15%]"
         />
         <Column
           field="estado"
@@ -466,13 +466,13 @@ export default function TablaExpedienteComponente({ titulo, goBack }) {
         />
 
         <Column field="fecha" header="Fecha" sortable className="text-sm w-[5%]"/>
-        <Column field="id" header="ID" className="text-sm w-[5%]" sortable />
+        <Column field="id" header="ID" className="text-sm w-[4%]" sortable />
         <Column
           field="acciones"
-          className="text-sm w-[5%]"
+          className="text-sm w-[4%]"
           body={accionesBodyTemplate}
         />
-        <Column field="favorito" body={ratingBodyTemplate} />
+        <Column field="favorito" body={ratingBodyTemplate} className="text-sm w-[4%]"/>
       </DataTable>
     </div>
   );
